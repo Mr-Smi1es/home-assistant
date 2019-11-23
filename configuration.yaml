@@ -1,15 +1,51 @@
+  #################################################################
+## Home Assistant - Core Configuration
+#################################################################
+
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+http:
+  base_url: homeassistant.tran-family.net
+
+# Track the sun
+sun:
+
+# Checks for available updates
+updater:
+  reporting: no
+
+#################################################################
+## Components
+#################################################################
+
+#logger:
+#  default: info
+#  logs:
+#    aiounifi: debug
+#    homeassistant.components.unifi: debug
+#    homeassistant.components.device_tracker.unifi: debug
+#    homeassistant.components.switch.unifi: debug
+
+map:
+
+# Enables support for tracking state changes over time.
+history:
+
+# Stream Componant
+stream:
+
+# enable HACS custom components
+hacs:
+  token: !secret HACS_token
 
 # Text to speech
 tts:
   - platform: google_translate
 
+######## INCLUDES ########
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
