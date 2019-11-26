@@ -1,0 +1,15 @@
+  - platform: ffmpeg
+    name: Front Porch Camera
+    input: !secret FPC_input
+  
+  - platform: ffmpeg
+    name: Baby_Room Camera
+    input: !secret BRC_input
+
+  - platform: ffmpeg
+    name: Living Room Camera
+    input: !secret LRC_input
+
+  - platform: ffmpeg
+    name: Kitch Camera
+    input: !secret KC_input

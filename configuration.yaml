@@ -6,9 +6,7 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-http:
-  base_url: homeassistant.tran-family.net
+config:
 
 # Track the sun
 sun:
@@ -21,13 +19,8 @@ updater:
 ## Components
 #################################################################
 
-#logger:
-#  default: info
-#  logs:
-#    aiounifi: debug
-#    homeassistant.components.unifi: debug
-#    homeassistant.components.device_tracker.unifi: debug
-#    homeassistant.components.switch.unifi: debug
+logger:
+  default: info
 
 map:
 
@@ -36,6 +29,15 @@ history:
 
 # Stream Componant
 stream:
+
+# Enables the frontend
+frontend:
+  javascript_version: latest
+
+# Lovelace
+#lovelace:
+#  mode: yaml
+
 
 # enable HACS custom components
 hacs:
@@ -50,3 +52,5 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+camera: !include camera.yaml
+http: !include http.yaml
